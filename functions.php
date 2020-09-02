@@ -1,12 +1,27 @@
 <?php
-    function blog_carrega_estilos_css() {
-        wp_enqueue_style( 'bootstrap4', get_template_directory_uri() . '/css/bootstrap.min.css',array(),false,'all'); 
-        wp_enqueue_style( 'footer', get_template_directory_uri() . '/css/footer.css'); 
-        wp_enqueue_style( 'header', get_template_directory_uri() . '/css/header.css'); 
-        wp_enqueue_style( 'home', get_template_directory_uri() . '/css/home.css'); 
-        wp_enqueue_style( 'single_post', get_template_directory_uri() . '/css/single_post.css'); 
+    function blog_carrega_bootstrap() 
+    {
+        wp_register_style('bootstrap4', get_template_directory_uri() . '/css/bootstrap.min.css', array(),false,'all');
+        wp_enqueue_style( 'bootstrap4'); //encubar
     }
-     add_action( 'wp_enqueue_scripts', 'blog_carrega_estilos_css' );
+     add_action( 'wp_enqueue_scripts', 'blog_carrega_bootstrap' );
+
+     function blog_carrega_csscustom() 
+    {
+        wp_register_style('custom', get_template_directory_uri() . '/css/custom.css', array(),false,'all');
+        wp_enqueue_style( 'custom'); //encubar
+    }
+     add_action( 'wp_enqueue_scripts', 'blog_carrega_csscustom' );
+
+
+     function blog_carrega_js_bootstrap()
+    {
+        wp_enqueue_script('jquery');
+        wp_enqueue_script( 'bootstrap',get_template_directory_uri().'/js/bootstrap.min.js','jquery',false,true);
+        wp_enqueue_script('boostrap');
+    }
+    add_action('wp_enqueue_scripts','blog_carrega_js_bootstrap');
+
 
     function blog_recursos_ao_tema()
     {
@@ -27,6 +42,19 @@
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'THEMENAME' ),
     ) );
+
+    function blog_top_searchMenu()
+    {
+        $form = '<form role="search" method="get" id="searchform" class="searchform form-inline" action="' . home_url( '/' ) . '" >
+              
+            <input class="form-control mr-sm-2"  type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Digite.." required/>
+            <button class="btn btn-success"  type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />Search</button>
+             
+            </form>';
+        
+            return $form;
+    }
+    add_filter( 'get_search_form', 'blog_top_searchMenu' );
 
     function blog_registrando_menu_footer()//Menu Footer
     {

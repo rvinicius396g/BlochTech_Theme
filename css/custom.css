@@ -1,0 +1,13 @@
+/* 
+    Header
+*/
+.custom-logo{
+    width: 20%;
+}
+header > .container {
+    padding:0; 
+}
+nav .page_item {
+    list-style: none;
+
+}
