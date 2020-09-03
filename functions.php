@@ -48,7 +48,7 @@
         $form = '<form role="search" method="get" id="searchform" class="searchform form-inline" action="' . home_url( '/' ) . '" >
               
             <input class="form-control mr-sm-2"  type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Digite.." required/>
-            <button class="btn btn-success"  type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />Search</button>
+            <button class="btn btn-success"  type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />Pesquisar</button>
              
             </form>';
         

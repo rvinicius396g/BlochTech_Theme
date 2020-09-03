@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title><?php bloginfo('name');?></title>
     
     <?php wp_head();?>
@@ -16,7 +16,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
                     <span class="navbar-toggler-icon"></span>
                 </button> 
-                
+                <a class="navbar-brand" href="<?php esc_url( home_url( '/' ) ); ?>">MTI</a>
                     <?php
                     wp_nav_menu( array(
                         'theme_location'    => 'primary',
