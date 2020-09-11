@@ -1,0 +1,29 @@
+/* 
+    Header
+*/
+.container {padding: 0;}
+ body {/* background-color: black; */}
+
+ .bg-light {
+     background-color: #439bf2 ;
+ }
+
+
+
+ /* 
+    Sidebar
+ */
+.sidebarRight{
+    border-left: 1px solid #99caff;
+}
+
+.sidebar-right ul{
+    list-style: none;
+} 
+.sidebar-right ul  {
+    padding-left: 10px;
+}
+
+.widget-right-title{
+    font-size: 22px;
+}

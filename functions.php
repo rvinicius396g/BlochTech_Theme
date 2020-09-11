@@ -8,7 +8,7 @@
 
      function blog_carrega_csscustom() 
     {
-        wp_register_style('custom', get_template_directory_uri() . '/css/custom.css', array(),false,'all');
+        wp_register_style('custom', get_template_directory_uri() . '/css/custom1.css', array(),false,'all');
         wp_enqueue_style( 'custom'); //encubar
     }
      add_action( 'wp_enqueue_scripts', 'blog_carrega_csscustom' );
