@@ -6,6 +6,9 @@
         </article>
         <article class="col-md-4">
             coluna
+            <?php if(is_active_sidebar('sidebar-right') ):?>
+                <?php dynamic_sidebar( 'sidebar-right' ); ?>
+            <?php endif ?>
         </article>
     </section>
 </div>

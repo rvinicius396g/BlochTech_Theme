@@ -1,4 +1,4 @@
-<footer class="container card">
+<footer class="container ">
     <section class="row card-body mt-1">
         <article class="col-md-6">
             <?php
